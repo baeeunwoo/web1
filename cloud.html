@@ -1,0 +1,116 @@
+<?php
+	include  $_SERVER['DOCUMENT_ROOT'] . "/include/lib/config_lib.php";
+	$skinfile = INCLUDE_DIR."skin/probest.php";
+	if(@file_exists($skinfile)) @include($skinfile);
+	echo $g_config['html_header'];
+?>
+<div class="wrap">
+	<section class="news-title bg-img">
+		<div class="menu-title">
+			<h2>클라우드</h2>
+			<h5>Cloud</h5> 
+		</div>
+	</section>
+
+	<section class="cloud">
+		<!--내용 : 클라우드-->
+		<div class="grid">
+
+			<!-- 사업의 특성 -->
+			<article class="cloud-business">
+				<div class="cloud-product-info1">
+					<h1>사업의 특성</h1>
+					<hr class="half-line">
+					<h2>제품정보</h2>
+					<h3>가. 4차 산업혁명 시대의 기반 인프라</h3>
+					<p>&nbsp;&nbsp;클라우드 서비스는 언제 어디서나 필요한 만큼의 컴퓨팅 자원을 인터넷으로 사용할 수 있습니다.<br>
+					서버의 유휴 자원을 활용해 효율성이 향상될 수 있도록 서비스 방식이 도입되었으며,
+					산업에서 인공지능과 빅데이터의 중요성이 커짐에 따라 클라우드 서비스가 4차 산업혁명의 기초 인프라로 주목받고 있습니다.
+					</p>
+				</div>
+				<div class="cloud-product-info2">
+					<h3>나. 클라우드 컴퓨팅의 특징</h3>
+				</div>    
+				<div class="cloud-product-img1">
+					<img src="img/cloud/cl_tb.svg" alt="클라우드 컴퓨팅의 특징">
+				</div>
+				<div class="cloud-product-info3">
+					<h3>다. 클라우드 서비스의 종류</h3>
+					<p>&nbsp;&nbsp;클라우드 서비스를 누가 어떻게 구축하고 제공 하느냐에 따라 공용(public)/사설(private)/혼합형(hybrid)으로,
+					그리고 클라우드 서비스의 제공 범위에 따라 IaaS/PaaS/SaaS로 서비스를 구분할 수 있습니다.</p>
+				</div>   
+				<div class="cloud-product-img2">
+					<img src="img/cloud/cl_circle.jpg" alt="클라우드 서비스의 종류">
+				</div>
+				<div class="cloud-product-info4">
+					<h3>라. 클라우드 서비스의 적용분야</h3>
+					<p>&nbsp;&nbsp;게임이나 인터넷 및 쇼핑몰처럼 사용자가 특정 시간에 몰리는 분야, 대규모 컴퓨팅 자원이 짧은 시간에 필요한
+					인공지능 개발과 시뮬레이션 분야에서의 클라우드 서비스의 활용도가 매우 높습니다.<br> 하지만, 안정성과 보안이
+					필요한 영역에서는 서비스 적용에 한계가 존재한다는 단점이 있습니다.</p>
+				</div>
+				<div class="cloud-product-info5">
+					<h3>마. 유연한 클라우드 서비스를 위한 핵심 기술</h3>
+					<p>&nbsp;1) 가상화 기술을 사용하는 '가상시계'는 소프트웨어의 물리적 컴퓨팅 환경을 구현<br>
+					&nbsp;2) 컨테이너는 가상화 기술을 통해 애플리케이션과 이것의 구동 환경을 격리하는 환경을 구현</p>
+				</div>
+			</article>
+
+			<!-- 사업의 성장 가능성 -->
+			<article class="growth-potential">
+				<div class="cloud-market-info1">
+					<h1>사업의 성장 가능성</h1>
+					<hr class="half-line">
+					<h2>사업의 시장</h2>
+					<h3>가. 전 세계 클라우드 서비스 시장</h3>
+					<p>&nbsp;&nbsp;'가트너'는 2017~2021년 전 세계 공용 클라우드 서비스 시장이 연평균 약 17.6%씩 성장할 것으로 예상했습니다.<br>
+					현재는 전체 서비스 중에서 SaaS가 가장 큰 비중을 차지하지만 다음에 클라우드 서비스 시장의 성장은 IaaS와 PaaS가 주도할 것으로 보이고,
+					기업들의 멀티 클라우드 및 혼합형(hybrid) 클라우드 서비스에 대한 수요가 증가함에 따라 IaaS와 PaaS의 통합 서비스에 대한 수요가 많이 늘어날 것입니다.<br>
+					AWS가 압도적인 시장 점유율을 유지하고 있는 상황에서 MS와 구글, 그리고 알리바바가 빠르게 성장하고 있습니다.</p>
+				</div>
+				<div class="cloud-market-img1">
+					<img src="img/cloud/cl_cloud.jpg" alt="세계 클라우드 서비스 시장">
+				</div>
+				<div class="cloud-market-info2">
+					<p>&nbsp;&nbsp;2006년 클라우드 서비스를 처음 상업화한 AWS가 전 세계 시장의 34%를 점유하면서 클라우드 서비스 시장을 재배해왔습니다.<br>
+					시장 진입은 늦었지만, MS는 'Cloud First' 전략으로 AWS를 바짝 추격하고 있고, 구글도 기계학습 분야의 강점으로 시장에서 빠르게 성장하고 있습니다.</p>
+				</div>
+				<div class="cloud-market-img2">
+					<img src="img/cloud/cl_market.jpg" alt="기업별 시장 포지션">
+				</div>
+				<div class="cloud-market-info3">
+					<h3>나. 국내 클라우드 시장</h3>
+					<p>&nbsp;&nbsp;'가트너'의 말에 의하면 국내 공용 클라우드 서비스 시장은 2021년까지 연평균 20.5%씩 증가하여 3.44조원의 매출을 달성 할 전망입니다.<br>
+					전 세계 시장에서 IaaS와 PaaS가 가장 빠르게 성장할 것으로 예상되는 데 반해, 국내 시장에서는 SaaS가 가장 빠르게 성장할 것으로 기대됩니다.<br>
+					국내 클라우드 기술 수준은 중국에도 뒤처지고 있는 상황입니다.<br> 세부 분야 중에서 클라우드 플랫폼 사업화 기술은 훨씬 더 큰 격차를 보이고 있는데,
+					클라우드 기술이 발전하기 위해서는 충분히 큰 시장 규모를 바탕으로 규모의 경제를 확보해야 하나 국내 시장만으로는 한계가 있는 실정입니다.
+					</p>
+				</div>
+				<div class="cloud-market-img3">
+					<img src="img/cloud/cl_skill.jpg" alt="국내 클라우드 시장">
+				</div>
+				<div class="cloud-market-info4">
+					<p>&nbsp;&nbsp;한국 기업의 클라우드 사용률은 OECD 국가 중 최하위 수준으로 한국은 가장 최근에 집계된 '15년 기준 12.9%의 사용률을 기록하여
+					그리스, 폴란드, 터키, 멕시코와 함께 가장 사용률이 낮은 국가에 포함되었습니다.<br> 국내에서는 현재 해외 클라우드 사업자가 시장을 주도하는 가운데
+					KT, 네이버, SK C&C 등이 경쟁하고 있습니다.<br> '17년 클라우드산업 실태조사에 따르면 국내 클라우드 공급 기업은 700개(중견기업 이상이 55개,
+					중소기업이 645개)이며 '15년 353개 대비 약 2배 증가했습니다.<br> &nbsp;&nbsp;해외진출을 하고 있는 기업 비중은 '16년 11.6%에서 '17년 5.2%로 감소하고 있고,
+					기술력이 열악하고 기업규모가 영세한 기업들이 많아 주로 대기업 클라우드 사업자의 서드파티 역할을 담당하고 있습니다.<br> 또한 응답기업들의
+					75.8%가 전문인력 수급에 어려움을 겪는 것으로 나타났습니다.</p>
+				</div>
+				<div class="cloud-market-img4">
+					<img src="img/cloud/cl_dot.svg" alt="국가별 기업 클라우드 사용률">
+				</div>
+			</article>
+		</div>
+	</section>
+
+	<section class="footer">   
+		<div class="footer-info">
+			<?php include INCLUDE_DIR."skin/footerMenu.php"; ?>
+		</div>
+	</section>
+
+</div>
+<?php
+	echo $g_config['html_tail'];
+?>
+

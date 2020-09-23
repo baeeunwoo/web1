@@ -1,0 +1,149 @@
+<?php
+	include  $_SERVER['DOCUMENT_ROOT'] . "/include/lib/config_lib.php";
+	$skinfile = INCLUDE_DIR."skin/probest.php";
+	if(@file_exists($skinfile)) @include($skinfile);
+	$table = $table ? $table : "news";
+	if(!$g_board_info = $conn->get_record('board_admin', "table_code='$table' AND onoff='Y'")) {
+		exit;
+	}
+	$NB = new NauriBoard("");	
+	$NB->Init($g_board_info, $AuthInfo);	
+	$boardName		= $g_board_info['board_name'];
+	$boardSubname	= $g_board_info['board_e​xplanation'];
+	$boardSkin		= $g_board_info['skin'];
+	$categoryInfo	= GetCategory($conn,$table,$b_category_uid="");	
+	echo $g_config['html_header'];
+?>
+
+<div class="wrap">
+
+	<section class="news-title bg-img">
+		<div class="menu-title">
+			<h2>뉴스&공지사항</h2>
+			<h5>News&Notice</h5> 
+		</div>
+
+	</section>
+
+	<section class="news-table">
+		<!--내용 : 게시판-->
+		<div class="grid">
+			<header class="table-header">
+				<form id="bbs_lf_fm">
+					<input type="hidden" name="table" id="table" value="<?php echo $table ?>">
+					<input type="hidden" name="last_uid" value="<?php echo $last_uid?>">
+					<input type="hidden" name="last_idx" value="<?php echo $last_idx?>">
+					<input type="hidden" name="viewmode" value="2">
+					<input type="hidden" name="page_num" value="5">
+					<input type="hidden" name="pern" value="8">
+					<input type="hidden" name="page" value="1">
+					<div class="row">
+					<?php if($NB->checkAuth('board_write')) { ?>
+						<div class="col-md-4">
+					<?php } else { ?>
+						<div class="col-md-6">
+					<?php } ?>
+							<div class="form-group">
+								<div class="input-group">
+									<span class="input-group-addon" id="bbs_category_addon"><i class="icon-fa-tag"></i></span>
+									<select class="form-control" name="b_category_uid" id="b_category_uid" aria-describedby="bbs_category_addon"<?php echo $categoryInfo[0] ? "":" disabled=\"disabled\"" ?>>
+										<?php echo $categoryInfo[1].$categoryInfo[2]; ?>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="row2">
+								<div class="col-md-8">
+									<div class="form-group">
+										<div class="input-group">
+											<span class="input-group-addon" id="bbs_lf_fm_school_addon"><i class="icon-fa-search"></i></span>
+											<select class="form-control" style="width:40%" name="b_field" id="b_field">
+												<option value="title">제목</option>
+												<option value="content">내용</option>
+											</select>
+											<input type="text" class="form-control" style="width:60%;margin-left:-1px" name="b_keyword" id="b_keyword" placeholder="검색어">
+										</div>
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<button type="submit" class="btn btn-info btn-block">검색</button>
+									</div>
+								</div>
+							</div>
+						</div><?php if($NB->checkAuth('board_write')) { ?>
+						<div class="col-md-2">
+							<div class="form-group">
+								<button class="btn btn-primary btn-block board-write"><i class="icon-fa-pencil"></i> 글쓰기</button>
+							</div>
+						</div><?php } ?>
+					</div>
+				</form>
+			</header>
+		   <table id="table_bbs_ls" class="table table-hover" data-skin="<?php echo $boardSkin ?>" f_idx="">
+				<thead>
+				<tr>
+					<th class="width-50">@</th>
+					<?php if($categoryInfo[0]) { ?><th class="width-100 hidden-xs">카테고리</th><?php } ?>
+					<?php
+						switch($boardSkin) {
+							default :			
+								echo "<th>제목</th>";	
+								echo "<th class=\"width-100\">작성일</th>";	
+								echo "<th class=\"width-80\">작성자</th>";	
+							break;
+						}
+					?>
+				</tr>
+				</thead>
+				<tbody>
+					<?php echo $html_code["list"] ?>
+				</tbody>
+			</table>
+			<nav id="pagination"></nav>
+		</div>     
+	</section>
+
+	<section class="footer">   
+		<div class="footer-info">
+			<?php include INCLUDE_DIR."skin/footerMenu.php"; ?>
+		</div>
+	</section>
+
+</div>
+<!-- 게시물보기 -->
+<div id="modal_bbs_vw" class="modal fade ps-wrapper" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<img class="img-close" src="/img/common/close.svg" alt="Close"/>
+				</button>
+				<h4 class="modal-title" id="label_modal_bbs_vw">제목 <span class="small">작성자</span></h4>
+			</div>
+			<div class="modal-body">
+				<div id="bbs_contents" style="min-height:250px">
+					
+				</div>
+				<div class="form-group inner-top-xs">
+					<div class="btn-group btn-group-justified" id="read_btn">
+
+					</div>
+				</div>
+			</div>
+        </div>
+    </div>
+</div>
+ <script src="/static/js/app.js?<?php echo filemtime($_SERVER['DOCUMENT_ROOT']."/static/js/app.js"); ?>"></script>
+<script src="/static/js/common.js?<?php echo filemtime($_SERVER['DOCUMENT_ROOT']."/static/js/common.js"); ?>"></script>
+<script src="/static/js/board.js?<?php echo filemtime($_SERVER['DOCUMENT_ROOT']."/static/js/board.js"); ?>"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		if($('#table').val()) bbs_lf_ls();
+	});
+</script>
+<?php
+	echo $g_config['html_tail'];
+?>
+

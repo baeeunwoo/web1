@@ -1,0 +1,70 @@
+<?php
+	include  $_SERVER['DOCUMENT_ROOT'] . "/include/lib/config_lib.php";
+	$skinfile = INCLUDE_DIR."skin/probest.php";
+	if(@file_exists($skinfile)) @include($skinfile);
+	echo $g_config['html_header'];
+?>
+<div class="wrap">
+
+	<section class="news-title bg-img">
+		<div class="menu-title">
+			<h2>금융</h2>
+			<h5>Finance</h5> 
+		</div>
+
+	</section>
+
+	<section class="finance">
+		<!-- 내용: 금융 -->
+		<div class="finance-grid">
+			<!-- 주요제품 -->
+			<article class="product">
+				<div class="product-info">
+					<h1>주요제품</h1>
+					<hr class="half-line">
+					<h2>제품정보</h2>
+					<p>&nbsp;&nbsp;자체 개발한 보험 전산 관리 플랫폼을 통해 보험대리점 및 금융 관련 기업들은
+					효율적인 보험 계약등록·관리, 계약 유지·관리, 실적관리, 수당관리, 보험상품관리, DB관리 등의 업무를 볼 수 있습니다.<br>
+					특히, 모든 보험대리점과 금융 관련 기업들의 요구를 충족시킬 수 있습니다. </p>
+				</div>
+				<div class="product-img1">
+					<img src="img/finance/fi_manage.svg" alt="금융 전산관리 플랫폼">   
+				</div>
+				<div class="product-img2">
+					<img src="img/finance/fi_compa.svg" alt="금융 상품별 비교 견적 플랫폼">   
+				</div>
+			</article>
+
+			<!-- 매출에 관한 사항 -->
+			<article class="revenue">
+				<div class="revenue-info">
+					<h1>매출에 관한 사항</h1>
+					<hr class="half-line">
+					<h2>판매조직</h2>
+					<p>&nbsp;&nbsp;당사의 판매조직을 통해 플랫폼을 제공하고, 고객사의 운영기간 동안 기능 및 품질 관리를 위해 체계적인 조직을 운영하고 있습니다.</p>
+				</div>
+
+				<div class="revenue-img">
+					<img src="img/finance/fi_orga.svg" alt="판매조직">
+				</div>
+				<div class="revenue-info">
+					<hr class="half-line">
+					<h2>판매전략</h2>
+					<p>&nbsp;&nbsp;당사의 서비스를 주로 이용하는 고객은 보험대리점 및 금융 관련 기업입니다.<br>
+					지속해서 플랫폼을 맞춤형으로 개발하고 공급함으로써 금융시장에서의 전산 플랫폼의 수요를 늘려가고 있습니다.</p>
+				</div>   
+			</article>
+		</div>
+	</section>
+
+	<section class="footer">   
+		<div class="footer-info">
+			<?php include INCLUDE_DIR."skin/footerMenu.php"; ?>
+		</div>
+	</section>
+
+</div>
+<?php
+	echo $g_config['html_tail'];
+?>
+

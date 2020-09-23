@@ -1,0 +1,54 @@
+<?php
+	include  $_SERVER['DOCUMENT_ROOT'] . "/include/lib/config_lib.php";
+	$skinfile = INCLUDE_DIR."skin/probest.php";
+	if(@file_exists($skinfile)) @include($skinfile);
+	echo $g_config['html_header'];
+?>
+
+<div class="wrap">
+
+	<section class="recru-title bg-img">
+		<div class="menu-title">
+			<h2>인재채용</h2>
+			<h5>Recruiting</h5> 
+		</div>
+	</section>
+
+	<section class="recruitment">
+		<!--내용 : 인재채용-->
+		<div class="grid">       
+			<div class="recru-up">       
+				<div class="content-title">    
+					<h1>인재채용</h1>
+					<h4>프로베스트소프트(주)와 함께 성장할 수 있는 인재</h4>
+				</div> 
+				<img src="img/recruitment/recru_icon.svg" class="recru-img">
+			</div>
+
+			<!--줄 긋고-->
+			<span class="info">
+				<span class="question">
+					<h4>문의하기</h4><p>02)853-7356</p>
+				</span>
+				<span class="apply">
+					<h4>입사지원</h4><p>probestsoft@probestsoft.kr</p>
+				</span>
+
+				<!--입사지원서--> 
+				<a class="resume" href="download/resume.zip"><img src="img/recruitment/resume.svg" width="320px"></a>
+			</span>
+		</div>
+	</section>
+
+	<section class="footer">   
+		<div class="footer-info">
+			<?php include INCLUDE_DIR."skin/footerMenu.php"; ?>
+		</div>
+	</section>
+
+</div>
+
+<?php
+	echo $g_config['html_tail'];
+?>
+

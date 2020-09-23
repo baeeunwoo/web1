@@ -1,0 +1,59 @@
+<?php
+	include  $_SERVER['DOCUMENT_ROOT'] . "/include/lib/config_lib.php";
+?>
+<html>
+	<head>
+		<?php include INCLUDE_DIR."skin/commonHead.php"; ?>
+		<link href="css/main.css" rel="stylesheet">
+	</head>
+	<body>
+		<!-- main-vav // -->
+		<div class="main-navbar">
+			<!-- <div class="nav-grid"> -->
+				<?php include INCLUDE_DIR."skin/probestHeaderMenu.php"; ?>
+		<!-- 	</div> -->
+		</div>
+		<!-- 동영상 -->
+		<div class="main-video">
+			<video src="" loop="" muted="" autoplay="" poster=""></video>
+		</div>
+		<!-- // main-nav -->
+		<div class="wrap">
+
+			<div class="bg_video pc_cont">
+				<video id="introvideo" autoplay="autoplay" loop="loop" muted="muted" poster="img/main/video-img.png" src="video/video.mp4"></video>
+				<!-- Video by Alexander Lutkov, Avalon Royce, Duca Imagens, Luke Yanko, Pressmaster, Taryn Elliott from Pexels -->
+			</div>
+
+			<section class="main">
+				<!--글귀-->
+				<div class="title">
+					<img src="img/main/title.svg" alt="타이틀">
+				</div>
+
+				<!-- 사업부 -->
+				<div class="business">
+					<div class="link-box">
+						<div>
+							<a href="game.html"><img src="img/main/main_game.svg" alt="game" class="link-game"></a>
+							<a href="cloud.html"><img src="img/main/main_cloud.svg" alt="cloud" class="link-cloud"></a>
+							<a href="financial.html"><img src="img/main/main_finance.svg" alt="financial" class="link-financial"></a>
+						</div>
+					</div>
+				</div>
+
+				<!--footer-->
+				<footer>
+					<div class="footer">
+						<?php include INCLUDE_DIR."skin/footerMenu.php"; ?>
+					</div>
+				</footer>
+			</section>
+		</div>
+
+		<script src="/static/js/app.js?<?php echo filemtime($_SERVER['DOCUMENT_ROOT']."/static/js/app.js"); ?>"></script>
+		<script src="/static/js/common.js?<?php echo filemtime($_SERVER['DOCUMENT_ROOT']."/static/js/common.js"); ?>"></script>
+		<script src="/static/js/main.js?<?php echo filemtime($_SERVER['DOCUMENT_ROOT']."/static/js/main.js"); ?>"></script>
+
+	</body>
+</html>
